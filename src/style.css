@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #f2f2f2;
+  --color-surface: #ffffff;
+  --color-ink: #111111;
+  --color-body: #2e2e2e;
+  --color-muted: #555555;
+  --color-line: #d0d0d0;
+  --color-edge: #c8c8c8;
+
+  --font-sans:
+    ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+@layer base {
+  html {
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    min-height: 100vh;
+    margin: 0;
+    background: var(--color-paper);
+    color: var(--color-body);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 400;
+    font-optical-sizing: auto;
+    font-kerning: normal;
+    font-synthesis: weight style;
+    text-rendering: optimizeLegibility;
+    /* 关键改动：关闭 antialiased，让浅底深字更实 */
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin: 0;
+    color: var(--color-ink);
+    font-weight: 600;
+    line-height: 1.2;
+    text-wrap: balance;
+    letter-spacing: -0.01em;
+  }
+
+  p,
+  ul,
+  ol {
+    margin: 0;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: var(--color-edge);
+    text-underline-offset: 0.18em;
+  }
+
+  a:hover {
+    text-decoration-color: currentColor;
+  }
+
+  hr {
+    margin: 1rem 0;
+    border: 0;
+    border-top: 1px solid var(--color-line);
+  }
+
+  ::selection {
+    background: #cfcfcf;
+    color: #000000;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 2px;
+  }
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 12mm 14mm;
+  }
+
+  html,
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 10.5pt;
+    line-height: 1.45;
+    /* 打印不要 antialiased，用默认渲染更实 */
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .avoid-break,
+  li {
+    break-inside: avoid;
+  }
+
+  h1,
+  h2,
+  h3 {
+    break-after: avoid;
+  }
+}

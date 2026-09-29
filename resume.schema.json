@@ -1,0 +1,258 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "个人简历数据结构",
+  "description": "用于个人简历 JSON 的字段补全与校验",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "personal_info",
+    "education",
+    "contact",
+    "certifications",
+    "projects",
+    "work_experience",
+    "skills",
+    "summary"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "JSON Schema 引用，可写 ./resume.schema.json"
+    },
+    "personal_info": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["full_name", "target_role"],
+      "properties": {
+        "full_name": {
+          "type": "string",
+          "description": "姓名",
+          "examples": ["张三"]
+        },
+        "target_role": {
+          "type": "string",
+          "description": "目标岗位"
+        }
+      }
+    },
+    "education": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["institution", "degree", "study_mode", "major", "institution_tier"],
+      "properties": {
+        "institution": {
+          "type": "string",
+          "description": "学校",
+          "enum": ["", "南昌大学"]
+        },
+        "degree": {
+          "type": "string",
+          "description": "学历/学位",
+          "enum": ["", "本科"]
+        },
+        "study_mode": {
+          "type": "string",
+          "description": "学习形式",
+          "enum": ["", "全日制"]
+        },
+        "major": {
+          "type": "string",
+          "description": "专业",
+          "enum": ["", "计算机科学与技术"]
+        },
+        "institution_tier": {
+          "type": "string",
+          "description": "院校层次",
+          "enum": ["", "211", "211工程"]
+        }
+      }
+    },
+    "contact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["current_city", "mobile", "email", "github"],
+      "properties": {
+        "current_city": {
+          "type": "string",
+          "description": "当前城市",
+          "examples": ["南昌"]
+        },
+        "mobile": {
+          "type": "string",
+          "description": "手机号；可为空",
+          "examples": ["13800138000"]
+        },
+        "email": {
+          "type": "string",
+          "description": "邮箱；可为空",
+          "pattern": "^$|^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$",
+          "examples": ["zhangsan@example.com"]
+        },
+        "github": {
+          "type": "string",
+          "description": "GitHub ID；可为空",
+          "examples": ["zhangsan"]
+        }
+      }
+    },
+    "certifications": {
+      "type": "array",
+      "description": "证书",
+      "items": {
+        "type": "string",
+        "enum": ["CET-4", "CET-6"]
+      }
+    },
+    "projects": {
+      "type": "array",
+      "description": "项目经历",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "role",
+          "start_date",
+          "end_date",
+          "introduction"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "项目名称",
+            "examples": ["校园二手交易平台"]
+          },
+          "role": {
+            "type": "string",
+            "description": "项目角色",
+            "examples": ["后端开发"]
+          },
+          "start_date": {
+            "type": "string",
+            "description": "开始时间，格式 YYYY-MM；可为空",
+            "pattern": "^$|^\\d{4}-\\d{2}$",
+            "examples": ["2023-03"]
+          },
+          "end_date": {
+            "type": "string",
+            "description": "结束时间，格式 YYYY-MM；可为空",
+            "pattern": "^$|^\\d{4}-\\d{2}$",
+            "examples": ["2023-06"]
+          },
+          "introduction": {
+            "type": "array",
+            "description": "项目介绍",
+            "items": {
+              "type": "string"
+            },
+            "examples": [
+              [
+                "面向校园场景的二手交易平台，支持商品发布、搜索、下单与订单管理。",
+                "负责后端接口设计与数据库表结构设计。"
+              ]
+            ]
+          }
+        }
+      }
+    },
+    "work_experience": {
+      "type": "array",
+      "description": "工作经历",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "company",
+          "department",
+          "employment_type",
+          "position",
+          "start_date",
+          "end_date",
+          "work_content"
+        ],
+        "properties": {
+          "company": {
+            "type": "string",
+            "description": "公司名称",
+            "examples": ["某某科技有限公司"]
+          },
+          "logo": {
+            "type": "string",
+            "description": "公司 LOGO URL",
+            "examples": ["https://example.com/logo.png"]
+          },
+          "company_alias": {
+            "type": "string",
+            "description": "公司别名、简称",
+            "examples": ["某某科技"]
+          },
+          "department": {
+            "type": "string",
+            "description": "部门",
+            "examples": ["后端研发部"]
+          },
+          "employment_type": {
+            "type": "string",
+            "description": "工作经历类别",
+            "enum": ["正式", "实习"]
+          },
+          "position": {
+            "type": "string",
+            "description": "职位",
+            "examples": ["后端开发实习生"]
+          },
+          "start_date": {
+            "type": "string",
+            "description": "开始时间，格式 YYYY-MM；可为空",
+            "pattern": "^$|^\\d{4}-\\d{2}$",
+            "examples": ["2024-01"]
+          },
+          "end_date": {
+            "type": "string",
+            "description": "结束时间，格式 YYYY-MM；可为空",
+            "pattern": "^$|^\\d{4}-\\d{2}$",
+            "examples": ["2024-04"]
+          },
+          "work_content": {
+            "type": "array",
+            "description": "工作内容",
+            "items": {
+              "type": "string"
+            },
+            "examples": [
+              [
+                "参与后端接口开发与联调。",
+                "负责部分数据库查询优化与缓存接入。"
+              ]
+            ]
+          }
+        }
+      }
+    },
+    "skills": {
+      "type": "array",
+      "description": "技能",
+      "items": {
+        "type": "string"
+      },
+      "examples": [
+        [
+          "Java",
+          "Spring Boot",
+          "MySQL",
+          "Redis",
+          "RabbitMQ",
+          "Git",
+          "Linux"
+        ]
+      ]
+    },
+    "summary": {
+      "type": "string",
+      "description": "个人总结",
+      "examples": [
+        "计算机科学与技术本科，211 院校，具备 Java 后端开发基础，熟悉 Spring Boot、MySQL、Redis 等常用技术栈。"
+      ]
+    }
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "$schema": "./resume.schema.json",
+  "personal_info": {
+    "full_name": "Viki",
+    "target_role": "Web 前端开发工程师"
+  },
+  "education": {
+    "institution": "南昌大学",
+    "degree": "本科",
+    "study_mode": "全日制",
+    "major": "计算机科学与技术",
+    "institution_tier": "211"
+  },
+  "contact": {
+    "current_city": "四川省成都市",
+    "mobile": "1XX-XXXX-XXXX",
+    "email": "hi@viki.moe",
+    "github": "vikiboss"
+  },
+  "projects": [
+    {
+      "name": "Metric 静态代码扫描平台",
+      "role": "负责人",
+      "start_date": "2024-02",
+      "end_date": "2026-05",
+      "introduction": [
+        "扫描司内项目，对源码质量、构建环境等维度进行分析，提供对外 API，服务于 CI 构建与前端规范卡点体系",
+        "通过结构化提示词与 LLM 缓存优化，实现构建错误智能归因分析与数据提取，减轻超 60% 的 CI 客服排障成本",
+        "基于 JSON Render 实现对话式 Agent UI，让非技术人员也能通过简单对话获取动态的项目洞察，归因时间缩短 70%",
+        "接入项目 1,000+ 个，日均 PV 1,000+，日均后台任务 100,000+ 次，日均项目构建 3,000+ 次"
+      ]
+    },
+    {
+      "name": "React 状态管理库与 Hooks 库",
+      "role": "负责人",
+      "start_date": "2023-07",
+      "end_date": "2026-05",
+      "introduction": [
+        "基于 Proxy 开发状态管理方案 @shined/reactive，通过显式依赖声明的设计决策，增加了状态确定性，降低了排错成本",
+        "基于真实业务场景，开发了 SSR 友好、TypeScript 优先、DX 优化、原子化可组合的 @shined/react-use",
+        "状态管理库接入项目 800+，Hooks 库接入项目 600+，统一技术栈，减少 50% 技术碎片化问题，显著降低协作成本"
+      ]
+    }
+  ],
+  "work_experience": [
+    {
+      "company": "北京百度网讯科技有限公司",
+      "company_alias": "百度",
+      "logo": "https://image.viki.moe/resume/baidu.png",
+      "employment_type": "实习",
+      "department": "搜索产品研发部",
+      "position": "前端实习生",
+      "start_date": "2022-07",
+      "end_date": "2022-09",
+      "work_content": [
+        "参与多个 B 端平台需求迭代，独立完成从需求沟通、接口对接到服务部署的全流程",
+        "基于内部 IM 开发群聊机器人，将文档问题平均反馈闭环时间从 2 小时降至 15 分钟"
+      ]
+    },
+    {
+      "company": "南京希音电子商务有限公司",
+      "company_alias": "SHEIN",
+      "logo": "https://image.viki.moe/resume/shein.png",
+      "employment_type": "实习",
+      "department": "前端架构组",
+      "position": "前端实习生",
+      "start_date": "2023-04",
+      "end_date": "2023-05",
+      "work_content": [
+        "参与内部前端框架 LEGO 的项目子模块开发，基于 AST 扫描项目依赖及其版本和使用情况",
+        "负责公司内部 B 端项目 npmjs 前端部分的设计和开发，支撑 2,000+ 内部包的检索与文档展示"
+      ]
+    },
+    {
+      "company": "南京希音电子商务有限公司",
+      "company_alias": "SHEIN",
+      "logo": "https://image.viki.moe/resume/shein.png",
+      "employment_type": "正式",
+      "department": "前端架构组",
+      "position": "前端工程师",
+      "start_date": "2023-07",
+      "end_date": "2026-05",
+      "work_content": [
+        "主导 B 端 Metric 前端静态代码扫描平台，负责前/后端的开发和维护，服务全司 1,000+ 前端项目",
+        "独立开发 React 状态管理库和 React Hooks 库，参与 LEGO 框架多个版本需求迭代和问题修复",
+        "主导公司前端编码规范制定与升级，提供前端技术支撑，解决框架、类库、CI 构建、规范等各方面问题"
+      ]
+    }
+  ],
+  "skills": [
+    "掌握 React、TypeScript、Node.js，熟悉响应式设计和 Tailwind CSS",
+    "熟悉 NestJS 和 Koa 等常见的 Node.js 后端框架，有全栈项目实践经验",
+    "熟悉 Vite、webpack 等主流前端工程化工具和方案",
+    "熟悉 HTTP 网络协议知识和常见计算机基础知识，具备计算机核心素养",
+    "了解 Agent 开发，了解 Function Calling、Prompt 工程与 RAG 工程相关概念"
+  ],
+  "certifications": ["CET-4", "CET-6"],
+  "summary": "3 年前端工程化和 B 端项目经验。曾就职于百度、SHEIN。在 SHEIN 任职期间，主导建设静态代码扫描平台并集成 AI 大模型，降低了 60% 排障归因成本。主导集团统一代码规范，并自研状态管理库与 Hooks 库，减少 50% 的技术栈碎片化问题，显著降低了跨团队协作成本。个人开源项目累计 Star 超过 6,000，具备一定开源影响力。"
+}
