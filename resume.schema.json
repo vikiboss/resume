@@ -109,13 +109,7 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": [
-          "name",
-          "role",
-          "start_date",
-          "end_date",
-          "introduction"
-        ],
+        "required": ["name", "role", "start_date", "end_date", "introduction"],
         "properties": {
           "name": {
             "type": "string",
@@ -219,12 +213,7 @@
             "items": {
               "type": "string"
             },
-            "examples": [
-              [
-                "参与后端接口开发与联调。",
-                "负责部分数据库查询优化与缓存接入。"
-              ]
-            ]
+            "examples": [["参与后端接口开发与联调。", "负责部分数据库查询优化与缓存接入。"]]
           }
         }
       }
@@ -235,17 +224,7 @@
       "items": {
         "type": "string"
       },
-      "examples": [
-        [
-          "Java",
-          "Spring Boot",
-          "MySQL",
-          "Redis",
-          "RabbitMQ",
-          "Git",
-          "Linux"
-        ]
-      ]
+      "examples": [["Java", "Spring Boot", "MySQL", "Redis", "RabbitMQ", "Git", "Linux"]]
     },
     "summary": {
       "type": "string",

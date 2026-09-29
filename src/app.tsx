@@ -8,32 +8,32 @@ import {
   Sparkles,
   PencilRuler,
   LayoutGrid,
-} from "lucide-react";
+} from 'lucide-react'
 
-import { GitHubIcon } from "./components/github-icon";
-import { formatMonth, toMarkdown } from "./utils";
-import { FloatingActions } from "./components/floating-actions";
+import { GitHubIcon } from './components/github-icon'
+import { formatMonth, toMarkdown } from './utils'
+import { FloatingActions } from './components/floating-actions'
 
-import type { ReactNode } from "react";
+import type { ReactNode } from 'react'
 
-const resume: Resume = JSON.parse(__RESUME_DATA__);
+const resume: Resume = JSON.parse(__RESUME_DATA__)
 
 function DateRange({ start, end }: { start: string; end: string }) {
   return (
-    <span className="shrink-0 text-xs tabular-nums text-muted">
+    <span className="text-muted shrink-0 text-xs tabular-nums">
       {formatMonth(start)} - {formatMonth(end)}
     </span>
-  );
+  )
 }
 
 function Bullets({ items }: { items: string[] }) {
   return (
-    <ul className="mt-1.5 list-disc space-y-0.5 pl-5 text-sm leading-[1.65] marker:text-line">
+    <ul className="marker:text-line mt-1.5 list-disc space-y-0.5 pl-5 text-sm leading-[1.65]">
       {items.map((text, i) => (
         <li key={i}>{text}</li>
       ))}
     </ul>
-  );
+  )
 }
 
 function Section({
@@ -41,27 +41,27 @@ function Section({
   title,
   children,
 }: {
-  icon: ReactNode;
-  title: string;
-  children: ReactNode;
+  icon: ReactNode
+  title: string
+  children: ReactNode
 }) {
   return (
     <section className="flex flex-col gap-1 print:gap-0">
-      <h2 className="mb-2 flex items-center gap-2 text-base font-semibold uppercase tracking-[0.14em] text-body">
+      <h2 className="text-body mb-2 flex items-center gap-2 text-base font-semibold tracking-[0.14em] uppercase">
         {icon}
         {title}
       </h2>
       {children}
     </section>
-  );
+  )
 }
 
 function Tag({ children }: { children: ReactNode }) {
   return (
-    <span className="rounded border border-edge px-1 py-px text-xs leading-none text-muted">
+    <span className="border-edge text-muted rounded border px-1 py-px text-xs leading-none">
       {children}
     </span>
-  );
+  )
 }
 
 function InfoRow({
@@ -69,17 +69,17 @@ function InfoRow({
   label,
   children,
 }: {
-  icon: ReactNode;
-  label: string;
-  children: ReactNode;
+  icon: ReactNode
+  label: string
+  children: ReactNode
 }) {
   return (
-    <li className="flex items-center gap-1.5">
-      <span className="shrink-0 text-muted">{icon}</span>
-      <span className="w-8 shrink-0 text-muted">{label}</span>
-      <span className="min-w-0 text-body">{children}</span>
+    <li className="flex items-center gap-1 text-xs sm:gap-1.5 sm:text-sm">
+      <span className="text-muted shrink-0">{icon}</span>
+      <span className="text-muted w-8 shrink-0">{label}</span>
+      <span className="text-body min-w-0">{children}</span>
     </li>
-  );
+  )
 }
 
 export function App() {
@@ -92,28 +92,28 @@ export function App() {
     projects,
     skills,
     certifications,
-  } = resume;
+  } = resume
 
-  const title = `${personal_info.full_name} - ${personal_info.target_role}`;
+  const title = `${personal_info.full_name} - ${personal_info.target_role}`
 
   return (
     <>
       <title>{title}</title>
 
-      <main className="mx-auto shadow-md print:shadow-none my-16 print:m-0 print:rounded-none rounded-lg max-w-210 space-y-8 bg-surface p-6 text-ink sm:px-8 sm:py-9 print:max-w-none print:space-y-8 print:bg-white print:p-0">
+      <main className="bg-surface text-ink mx-auto my-0 max-w-210 space-y-8 p-4 sm:p-6 sm:my-16 sm:rounded-lg sm:px-8 sm:py-9 sm:shadow-md print:m-0 print:max-w-none print:space-y-8 print:rounded-none print:bg-white print:p-0 print:shadow-none">
         {/* ---------------- header ---------------- */}
-        <header className="border-b border-edge pb-3.5">
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-8 sm:gap-8">
+        <header className="border-edge border-b pb-3.5">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-5 sm:gap-8">
             {/* 左：姓名 + 职位 */}
-            <div className="sm:col-span-3">
+            <div className="sm:col-span-2">
               <h1 className="text-5xl leading-none font-semibold tracking-tight">
                 {personal_info.full_name}
               </h1>
-              <p className="mt-2 text-sm text-muted">应聘职位：{personal_info.target_role}</p>
+              <p className="text-muted mt-2 text-sm">应聘职位：{personal_info.target_role}</p>
             </div>
 
             {/* 右：信息网格 */}
-            <ul className="grid grid-cols-1 gap-x-4 gap-y-1 text-sm sm:col-span-5 sm:grid-cols-2">
+            <ul className="grid grid-cols-2 gap-x-0 gap-y-1 text-sm sm:col-span-3 sm:grid-cols-2 sm:gap-x-0">
               <InfoRow icon={<Phone className="size-4" />} label="手机">
                 <a href={`tel:${contact.mobile}`}>{contact.mobile}</a>
               </InfoRow>
@@ -132,7 +132,7 @@ export function App() {
                 </a>
               </InfoRow>
               <InfoRow icon={<Award className="size-4" />} label="证书">
-                {certifications.join(" / ")}
+                {certifications.join(' / ')}
               </InfoRow>
             </ul>
           </div>
@@ -140,7 +140,7 @@ export function App() {
 
         {/* ---------------- summary ---------------- */}
         <Section icon={<Sparkles className="size-4" />} title="个人简介">
-          <p className="text-sm leading-[1.65] text-body">{summary}</p>
+          <p className="text-body text-sm leading-[1.65]">{summary}</p>
         </Section>
 
         {/* ---------------- work ---------------- */}
@@ -148,8 +148,8 @@ export function App() {
           <div className="space-y-3">
             {work_experience.map((w, i) => (
               <article key={i} className="avoid-break">
-                <div className="flex text-sm items-center justify-between gap-3 bg-gray-200/80 px-1 py-0.5 rounded print:rounded-none border-line print:border-b">
-                  <div className="flex flex-wrap items-center gap-x-4 gap-y-0.5">
+                <div className="border-line flex items-center justify-between rounded bg-gray-200/80 px-1 py-0.5 text-sm sm:gap-3 print:rounded-none print:border-b">
+                  <div className="flex items-center gap-x-2 gap-y-0.5 sm:gap-x-4">
                     <div className="flex items-center gap-x-1">
                       {w.logo && (
                         <img
@@ -162,13 +162,16 @@ export function App() {
                         {w.company_alias || w.company}
                       </h3>
                     </div>
-                    <span className="truncate text-muted" title={w.company}>
+                    <span className="text-muted hidden truncate sm:inline" title={w.company}>
                       {w.company}
                     </span>
-                    <span className="text-body/85">
-                      {w.department} · {w.position}
-                    </span>
-                    {w.employment_type === "实习" && <Tag>{w.employment_type}</Tag>}
+                    <div className="flex items-center gap-2">
+                      <span className="text-body/85 inline sm:hidden">{w.position}</span>
+                      <span className="text-body/85 hidden sm:inline">
+                        {w.department} · {w.position}
+                      </span>
+                      {w.employment_type === '实习' && <Tag>{w.employment_type}</Tag>}
+                    </div>
                   </div>
                   <DateRange start={w.start_date} end={w.end_date} />
                 </div>
@@ -183,8 +186,8 @@ export function App() {
           <div className="space-y-3">
             {projects.map((p, i) => (
               <article key={i} className="avoid-break">
-                <div className="flex text-sm items-baseline justify-between gap-3 bg-gray-200/80 px-1 py-0.5 rounded print:rounded-none border-line print:border-b">
-                  <div className="flex flex-wrap items-center gap-x-4 gap-y-0.5">
+                <div className="border-line flex items-baseline justify-between gap-3 rounded bg-gray-200/80 px-1 py-0.5 text-sm print:rounded-none print:border-b">
+                  <div className="flex items-center gap-x-4 gap-y-0.5">
                     <h3 className="font-medium">{p.name}</h3>
                     <span className="text-body/85">{p.role}</span>
                   </div>
@@ -204,5 +207,5 @@ export function App() {
 
       <FloatingActions markdown={toMarkdown(resume)} />
     </>
-  );
+  )
 }
