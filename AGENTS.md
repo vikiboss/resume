@@ -1,1 +1,1 @@
-# Resume Project for Viki
+# Viki's online resume
