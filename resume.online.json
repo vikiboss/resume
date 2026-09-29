@@ -90,7 +90,7 @@
   "skills": [
     "掌握 React、TypeScript、Node.js，熟悉响应式设计和 Tailwind CSS",
     "熟悉 NestJS 和 Koa 等常见的 Node.js 后端框架，有全栈项目实践经验",
-    "熟悉 Vite、webpack 等主流前端工程化工具和方案",
+    "熟悉 Vite、webpack 等主流前端工程化工具和 Git 提交、开发规范",
     "熟悉 HTTP 网络协议知识和常见计算机基础知识，具备计算机核心素养",
     "了解 Agent 开发，了解 Function Calling、Prompt 工程与 RAG 工程相关概念"
   ],
