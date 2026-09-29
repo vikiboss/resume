@@ -9,11 +9,12 @@ import {
   PencilRuler,
   LayoutGrid,
 } from 'lucide-react'
-import { Analytics } from '@vercel/analytics/next'
+import { Analytics } from '@vercel/analytics/react'
 
 import { GitHubIcon } from './components/github-icon'
 import { formatMonth, toMarkdown } from './utils'
 import { FloatingActions } from './components/floating-actions'
+
 import type { ReactNode } from 'react'
 
 const resume: Resume = JSON.parse(__RESUME_DATA__)
