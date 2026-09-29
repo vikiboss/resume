@@ -35,10 +35,6 @@
     font-optical-sizing: auto;
     font-kerning: normal;
     font-synthesis: weight style;
-    text-rendering: optimizeLegibility;
-    /* 关键改动：关闭 antialiased，让浅底深字更实 */
-    -webkit-font-smoothing: auto;
-    -moz-osx-font-smoothing: auto;
   }
 
   h1,
