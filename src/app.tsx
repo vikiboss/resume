@@ -9,11 +9,11 @@ import {
   PencilRuler,
   LayoutGrid,
 } from 'lucide-react'
+import { Analytics } from '@vercel/analytics/next'
 
 import { GitHubIcon } from './components/github-icon'
 import { formatMonth, toMarkdown } from './utils'
 import { FloatingActions } from './components/floating-actions'
-
 import type { ReactNode } from 'react'
 
 const resume: Resume = JSON.parse(__RESUME_DATA__)
@@ -100,7 +100,7 @@ export function App() {
     <>
       <title>{title}</title>
 
-      <main className="bg-surface text-ink mx-auto my-0 max-w-210 space-y-8 p-4 sm:p-6 sm:my-16 sm:rounded-lg sm:px-8 sm:py-9 sm:shadow-md print:m-0 print:max-w-none print:space-y-8 print:rounded-none print:bg-white print:p-0 print:shadow-none">
+      <main className="bg-surface text-ink mx-auto my-0 max-w-210 space-y-8 p-4 sm:my-16 sm:rounded-lg sm:p-6 sm:px-8 sm:py-9 sm:shadow-md print:m-0 print:max-w-none print:space-y-8 print:rounded-none print:bg-white print:p-0 print:shadow-none">
         {/* ---------------- header ---------------- */}
         <header className="border-edge border-b pb-3.5">
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-5 sm:gap-8">
@@ -206,6 +206,8 @@ export function App() {
       </main>
 
       <FloatingActions markdown={toMarkdown(resume)} />
+
+      <Analytics />
     </>
   )
 }
