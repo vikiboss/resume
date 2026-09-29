@@ -9,7 +9,7 @@ import pkg from "./package.json" with { type: "json" };
 import type { UserConfig } from "vite";
 
 // https://vite.dev/config/
-export default defineConfig(async () => {
+export default defineConfig(async ({ command }) => {
   const filename = `resume.${process.env.DATA_ENV || "online"}.json`;
   const rawJsonResume = await fs.readFile(filename, "utf-8");
   const version = pkg.version || "1.0.0";
@@ -33,6 +33,6 @@ export default defineConfig(async () => {
     css: {
       transformer: "lightningcss",
     },
-    devtools: true,
+    devtools: command !== "build",
   } satisfies UserConfig;
 });
