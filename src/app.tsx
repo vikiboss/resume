@@ -139,7 +139,7 @@ export function App() {
         </header>
 
         {/* ---------------- summary ---------------- */}
-        <Section icon={<Sparkles className="size-4" />} title="个人简介">
+        <Section icon={<Sparkles className="size-4" />} title="专业简介">
           <p className="text-body text-sm leading-[1.65]">{summary}</p>
         </Section>
 
