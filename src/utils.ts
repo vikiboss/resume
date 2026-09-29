@@ -12,18 +12,16 @@ export function toMarkdown(r: Resume) {
   lines.push(`**应聘职位：** ${p.target_role}`)
   lines.push('')
   lines.push(
-    [
-      `电话 ${c.mobile}`,
-      `邮件 ${c.email}`,
-      `地址 ${c.current_city}`,
-      `GitHub [${c.github}](https://github.com/${c.github})`,
-    ].join(' · '),
+    `- 电话 ${c.mobile}`,
+    `- 邮件 ${c.email}`,
+    `- 地址 ${c.current_city}`,
+    `- GitHub [${c.github}](https://github.com/${c.github})`,
   )
   lines.push('')
   lines.push('---')
   lines.push('')
 
-  lines.push('## 个人简介')
+  lines.push('## 专业简介')
   lines.push('')
   lines.push(r.summary)
   lines.push('')
