@@ -21,7 +21,7 @@ const resume: Resume = JSON.parse(__RESUME_DATA__)
 
 function DateRange({ start, end }: { start: string; end: string }) {
   return (
-    <span className="text-muted shrink-0 text-base tabular-nums">
+    <span className="text-muted shrink-0 text-sm tabular-nums sm:text-base">
       {formatMonth(start)} - {formatMonth(end)}
     </span>
   )
@@ -75,7 +75,7 @@ function InfoRow({
   children: ReactNode
 }) {
   return (
-    <li className="flex items-center gap-1 text-sm sm:gap-1.5 sm:text-base">
+    <li className="flex items-center gap-1 text-xs sm:gap-1.5 sm:text-base">
       <span className="text-muted shrink-0">{icon}</span>
       <span className="text-muted w-8 shrink-0">{label}</span>
       <span className="text-body min-w-0">{children}</span>
@@ -149,7 +149,7 @@ export function App() {
           <div className="space-y-3">
             {work_experience.map((w, i) => (
               <article key={i} className="avoid-break">
-                <div className="border-line dark:bg-edge bg-edge/36 flex items-center justify-between rounded px-1 py-0.5 text-base sm:gap-3 print:rounded-none print:border-b print:bg-transparent print:p-0">
+                <div className="border-line dark:bg-edge bg-edge/36 flex items-center justify-between gap-1 rounded px-1 py-0.5 sm:gap-3 text-base print:rounded-none print:border-b print:bg-transparent print:p-0">
                   <div className="flex items-center gap-x-2 gap-y-0.5 sm:gap-x-4">
                     <div className="flex items-center gap-x-1">
                       {w.logo && (
@@ -167,8 +167,8 @@ export function App() {
                       {w.company}
                     </span>
                     <div className="flex items-center gap-2">
-                      <span className="text-body/85 inline sm:hidden">{w.position}</span>
-                      <span className="text-body/85 hidden sm:inline">
+                      <span className="text-muted inline sm:hidden">{w.position}</span>
+                      <span className="text-muted hidden sm:inline">
                         {w.department} · {w.position}
                       </span>
                       {w.employment_type === '实习' && <Tag>{w.employment_type}</Tag>}
@@ -187,7 +187,7 @@ export function App() {
           <div className="space-y-3">
             {projects.map((p, i) => (
               <article key={i} className="avoid-break">
-                <div className="border-line dark:bg-edge bg-edge/36 flex items-baseline justify-between gap-3 rounded px-1 py-0.5 text-base print:rounded-none print:border-b print:bg-transparent print:p-0">
+                <div className="border-line dark:bg-edge bg-edge/36 flex items-baseline justify-between gap-1 rounded px-1 py-0.5 sm:gap-3 text-base print:rounded-none print:border-b print:bg-transparent print:p-0">
                   <div className="flex items-center gap-x-4 gap-y-0.5">
                     <h3 className="font-medium">{p.name}</h3>
                     <span className="text-body/85">{p.role}</span>
