@@ -21,7 +21,7 @@ const resume: Resume = JSON.parse(__RESUME_DATA__)
 
 function DateRange({ start, end }: { start: string; end: string }) {
   return (
-    <span className="text-muted shrink-0 text-xs tabular-nums">
+    <span className="text-muted shrink-0 text-base tabular-nums">
       {formatMonth(start)} - {formatMonth(end)}
     </span>
   )
@@ -29,7 +29,7 @@ function DateRange({ start, end }: { start: string; end: string }) {
 
 function Bullets({ items }: { items: string[] }) {
   return (
-    <ul className="marker:text-line mt-1.5 list-disc space-y-0.5 pl-5 text-sm leading-[1.65]">
+    <ul className="marker:text-line mt-1.5 list-disc space-y-0.5 pl-5 text-base leading-[1.65]">
       {items.map((text, i) => (
         <li key={i}>{text}</li>
       ))}
@@ -59,7 +59,7 @@ function Section({
 
 function Tag({ children }: { children: ReactNode }) {
   return (
-    <span className="border-edge text-muted rounded border px-1 py-px text-xs leading-none">
+    <span className="border-muted/60 text-muted rounded border px-1 py-px text-sm leading-none print:hidden">
       {children}
     </span>
   )
@@ -75,7 +75,7 @@ function InfoRow({
   children: ReactNode
 }) {
   return (
-    <li className="flex items-center gap-1 text-xs sm:gap-1.5 sm:text-sm">
+    <li className="flex items-center gap-1 text-sm sm:gap-1.5 sm:text-base">
       <span className="text-muted shrink-0">{icon}</span>
       <span className="text-muted w-8 shrink-0">{label}</span>
       <span className="text-body min-w-0">{children}</span>
@@ -101,7 +101,7 @@ export function App() {
     <>
       <title>{title}</title>
 
-      <main className="bg-surface text-ink mx-auto my-0 max-w-210 space-y-8 p-4 sm:my-24 sm:rounded-lg sm:p-6 sm:px-8 sm:py-9 sm:shadow-md print:m-0 print:max-w-none print:space-y-8 print:rounded-none print:bg-white print:p-0 print:shadow-none">
+      <main className="bg-surface text-ink mx-auto my-0 max-w-210 space-y-8 p-4 sm:mt-20 sm:mb-40 sm:rounded-lg sm:p-6 sm:px-8 sm:py-9 sm:shadow-md sm:dark:shadow-none print:m-0 print:max-w-none print:space-y-8 print:rounded-none print:bg-white print:p-0 print:shadow-none">
         {/* ---------------- header ---------------- */}
         <header className="border-edge border-b pb-3.5">
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-5 sm:gap-8">
@@ -110,11 +110,11 @@ export function App() {
               <h1 className="text-5xl leading-none font-semibold tracking-tight">
                 {personal_info.full_name}
               </h1>
-              <p className="text-muted mt-2 text-sm">应聘职位：{personal_info.target_role}</p>
+              <p className="text-muted mt-2 text-base">应聘职位：{personal_info.target_role}</p>
             </div>
 
             {/* 右：信息网格 */}
-            <ul className="grid grid-cols-2 gap-x-0 gap-y-1 text-sm sm:col-span-3 sm:grid-cols-2 sm:gap-x-0">
+            <ul className="grid grid-cols-2 gap-x-0 gap-y-1 text-base sm:col-span-3 sm:grid-cols-2 sm:gap-x-0">
               <InfoRow icon={<Phone className="size-4" />} label="手机">
                 <a href={`tel:${contact.mobile}`}>{contact.mobile}</a>
               </InfoRow>
@@ -141,7 +141,7 @@ export function App() {
 
         {/* ---------------- summary ---------------- */}
         <Section icon={<Sparkles className="size-4" />} title="专业简介">
-          <p className="text-body text-sm leading-[1.65]">{summary}</p>
+          <p className="text-body text-base leading-[1.65]">{summary}</p>
         </Section>
 
         {/* ---------------- work ---------------- */}
@@ -149,7 +149,7 @@ export function App() {
           <div className="space-y-3">
             {work_experience.map((w, i) => (
               <article key={i} className="avoid-break">
-                <div className="border-line flex items-center justify-between rounded bg-gray-200/80 px-1 py-0.5 text-sm sm:gap-3 print:rounded-none print:border-b">
+                <div className="border-line dark:bg-edge bg-edge/36 flex items-center justify-between rounded px-1 py-0.5 text-base sm:gap-3 print:rounded-none print:border-b print:bg-transparent print:p-0">
                   <div className="flex items-center gap-x-2 gap-y-0.5 sm:gap-x-4">
                     <div className="flex items-center gap-x-1">
                       {w.logo && (
@@ -187,7 +187,7 @@ export function App() {
           <div className="space-y-3">
             {projects.map((p, i) => (
               <article key={i} className="avoid-break">
-                <div className="border-line flex items-baseline justify-between gap-3 rounded bg-gray-200/80 px-1 py-0.5 text-sm print:rounded-none print:border-b">
+                <div className="border-line dark:bg-edge bg-edge/36 flex items-baseline justify-between gap-3 rounded px-1 py-0.5 text-base print:rounded-none print:border-b print:bg-transparent print:p-0">
                   <div className="flex items-center gap-x-4 gap-y-0.5">
                     <h3 className="font-medium">{p.name}</h3>
                     <span className="text-body/85">{p.role}</span>
