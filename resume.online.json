@@ -36,8 +36,8 @@
       "start_date": "2023-07",
       "end_date": "2026-05",
       "introduction": [
-        "基于 Proxy 开发状态管理方案 @shined/reactive，显式依赖声明的设计决策增加状态确定性，降低排错成本",
-        "基于业务场景开发 SSR 友好、TypeScript 优先、DX 优化、原子化可组合的 @shined/react-use Hooks 库",
+        "基于 Proxy 开发状态管理方案 @shined/reactive，采用显式依赖声明增加状态确定性，降低排错成本",
+        "基于业务场景开发 SSR 友好、TypeScript 优先、原子化可组合的 @shined/react-use Hooks 库",
         "状态管理库接入项目 800+，Hooks 库 600+，统一技术栈减少 50% 技术碎片化问题，显著降低协作成本"
       ]
     }
