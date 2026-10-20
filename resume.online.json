@@ -13,7 +13,7 @@
   },
   "contact": {
     "current_city": "四川省成都市",
-    "mobile": "1XX-XXXX-XXXX",
+    "mobile": "***-****-****",
     "email": "hi@viki.moe",
     "github": "vikiboss"
   },
@@ -81,8 +81,8 @@
       "start_date": "2023-07",
       "end_date": "2026-05",
       "work_content": [
-        "主导 B 端 Metric 前端静态代码扫描平台，负责前/后端的开发和维护，服务全司 1,000+ 前端项目",
-        "独立开发 React 状态管理库和 React Hooks 库，参与 LEGO 框架多个版本需求迭代和问题修复",
+        "主导 B 端 Metric 前端静态代码扫描平台，负责全栈开发/维护，服务全司 1,000+ 前端项目",
+        "独立开发 React 状态管理库和 Hooks 库，参与 LEGO 框架多个版本需求的迭代和问题修复",
         "主导公司前端编码规范制定与升级，提供前端技术支撑，解决框架、类库、CI 构建、规范等各方面问题"
       ]
     }

@@ -2,12 +2,12 @@ import {
   Award,
   BriefcaseBusiness,
   GraduationCap,
+  LayoutGrid,
   Mail,
   MapPin,
+  PencilRuler,
   Phone,
   Sparkles,
-  PencilRuler,
-  LayoutGrid,
 } from 'lucide-react'
 import { Analytics } from '@vercel/analytics/react'
 
@@ -85,14 +85,14 @@ function InfoRow({
 
 export function App() {
   const {
-    personal_info,
-    contact,
-    summary,
-    education,
-    work_experience,
-    projects,
-    skills,
-    certifications,
+      personal_info,
+      contact,
+      summary,
+      education,
+      work_experience,
+      projects,
+      skills,
+      certifications,
   } = resume
 
   const title = `${personal_info.full_name} - ${personal_info.target_role}`
@@ -149,7 +149,7 @@ export function App() {
           <div className="space-y-3">
             {work_experience.map((w, i) => (
               <article key={i} className="avoid-break">
-                <div className="border-line dark:bg-edge bg-edge/36 flex items-center justify-between gap-1 rounded px-1 py-0.5 sm:gap-3 text-base print:rounded-none print:border-b print:bg-transparent print:p-0">
+                <div className="border-line dark:bg-edge bg-edge/36 flex items-center justify-between gap-1 rounded px-1 py-0.5 text-base sm:gap-3 print:rounded-none print:border-b print:bg-transparent print:p-0">
                   <div className="flex items-center gap-x-2 gap-y-0.5 sm:gap-x-4">
                     <div className="flex items-center gap-x-1">
                       {w.logo && (
@@ -187,7 +187,7 @@ export function App() {
           <div className="space-y-3">
             {projects.map((p, i) => (
               <article key={i} className="avoid-break">
-                <div className="border-line dark:bg-edge bg-edge/36 flex items-baseline justify-between gap-1 rounded px-1 py-0.5 sm:gap-3 text-base print:rounded-none print:border-b print:bg-transparent print:p-0">
+                <div className="border-line dark:bg-edge bg-edge/36 flex items-baseline justify-between gap-1 rounded px-1 py-0.5 sm:gap-3 text-base sm:text-base print:rounded-none print:border-b print:bg-transparent print:p-0">
                   <div className="flex items-center gap-x-4 gap-y-0.5">
                     <h3 className="font-medium">{p.name}</h3>
                     <span className="text-body/85">{p.role}</span>

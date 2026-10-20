@@ -1,6 +1,6 @@
 export function formatMonth(d: string) {
   const [y, m] = d.split('-')
-  return `${y}.${m}`
+  return `${Number(y)}.${Number(m)}`
 }
 
 export function toMarkdown(r: Resume) {
